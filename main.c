@@ -6,7 +6,7 @@
 /*   By: jhakonie <jhakonie@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/14 17:45:21 by jhakonie          #+#    #+#             */
-/*   Updated: 2020/07/21 21:17:27 by jhakonie         ###   ########.fr       */
+/*   Updated: 2020/07/22 22:41:24 by jhakonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int main(int ac, char **av)
 	}
 	else if (ac == 1)
 	{
-		while (i < 5 && x == 1)
+		while (x == 1)
 		{
 			x = get_next_line(fd, &line);
 			if (x == -1)
@@ -68,7 +68,6 @@ int main(int ac, char **av)
 			{
 				printf("Nothing left to read.\n");
 			}
-			i++;
 		}
 		printf("Line is: |%s|\n", line);
 	}
