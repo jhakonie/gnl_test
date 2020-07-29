@@ -6,7 +6,7 @@
 /*   By: jhakonie <jhakonie@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/14 17:45:21 by jhakonie          #+#    #+#             */
-/*   Updated: 2020/07/22 22:41:24 by jhakonie         ###   ########.fr       */
+/*   Updated: 2020/07/29 13:52:06 by jhakonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,16 @@ int main(int ac, char **av)
 
 	line = NULL;
 	fd = 0;
-	if (ac == 2)
+	if (ac == 2 && ft_strcmp(av[1], "stdin") != 0)
 	{
 		fd = open(av[1], O_RDONLY);
 		if (fd == -1)
 			printf("open() failed\n");
-		while (i < 5 && x == 1)
+		while (i < 100 && x == 1)
 		{
 			x = get_next_line(fd, &line);
 			if (x == -1)
-				printf("error");
+				printf("error\n");
 
 			else if (x == 1)
 			{
@@ -50,24 +50,28 @@ int main(int ac, char **av)
 			}
 			i++;
 		}
-		printf("Line is: |%s|\n\n", line);
+		printf("Line is: |%s|\n", line);
 	}
 	else if (ac == 1)
+		printf("Too few arguments.\nTo test with echo, write:\necho 'some text' | ./test_gnl stdin\n");
+	else if (ac == 2 && ft_strcmp(av[1], "stdin") == 0)
 	{
-		while (x == 1)
+		while (x == 1 && i < 5)
 		{
 			x = get_next_line(fd, &line);
+			printf("%d\n", fd);
 			if (x == -1)
-				ft_putstr("error");
+				ft_putstr("error\n");
 			else if (x == 1)
 			{
 				printf("Line is: |%s|\n", line);
 				ft_strdel(&line);
 			}
-			else
+			else if (x == 0)
 			{
 				printf("Nothing left to read.\n");
 			}
+			i++;
 		}
 		printf("Line is: |%s|\n", line);
 	}
@@ -105,7 +109,7 @@ int main(int ac, char **av)
 		{
 			x = get_next_line(fd2, &line);
 			if (x == -1)
-				ft_putstr("error");
+				ft_putstr("error\n");
 
 			else if (x == 1)
 			{
@@ -154,11 +158,11 @@ int main(int ac, char **av)
 			}
 			i++;
 		}
-		printf("Line is: |%s|\n\n", line);
+		printf("Line is: |%s|\n", line);
 	}
 	else
 	{
-		printf("wrong number of arguments");
+		printf("wrong number of arguments, give 3 file names.\n");
 	}
 
 	// while (1)
