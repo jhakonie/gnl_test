@@ -6,7 +6,7 @@
 /*   By: jhakonie <jhakonie@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/14 17:45:21 by jhakonie          #+#    #+#             */
-/*   Updated: 2020/07/29 13:52:06 by jhakonie         ###   ########.fr       */
+/*   Updated: 2020/07/31 12:40:17 by jhakonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,9 @@ int main(int ac, char **av)
 		printf("Too few arguments.\nTo test with echo, write:\necho 'some text' | ./test_gnl stdin\n");
 	else if (ac == 2 && ft_strcmp(av[1], "stdin") == 0)
 	{
-		while (x == 1 && i < 5)
+		while (x == 1 && i < 10)
 		{
 			x = get_next_line(fd, &line);
-			printf("%d\n", fd);
 			if (x == -1)
 				ft_putstr("error\n");
 			else if (x == 1)
@@ -87,7 +86,7 @@ int main(int ac, char **av)
 			ft_putstr("open() failed\n");
 		if (fd3 == -1)
 			ft_putstr("open() failed\n");
-		while (i < 2 && x == 1)
+		while (i < 3 && x == 1)
 		{
 			x = get_next_line(fd, &line);
 			if (x == -1)
@@ -104,8 +103,9 @@ int main(int ac, char **av)
 			}
 			i++;
 		}
+		printf("fd is %d\n", fd);
 		i = 0;
-		while (i < 2 && x == 1)
+		while (i < 3 && x == 1)
 		{
 			x = get_next_line(fd2, &line);
 			if (x == -1)
@@ -123,7 +123,8 @@ int main(int ac, char **av)
 			i++;
 		}
 		i = 0;
-		while (i < 2 && x == 1)
+		printf("fd is %d\n", fd2);
+		while (i < 3 && x == 1)
 		{
 			x = get_next_line(fd3, &line);
 			if (x == -1)
@@ -141,7 +142,8 @@ int main(int ac, char **av)
 			i++;
 		}
 		i = 0;
-		while (i < 2 && x == 1)
+		printf("fd is %d\n", fd3);
+		while (i < 3 && x == 1)
 		{
 			x = get_next_line(fd, &line);
 			if (x == -1)
@@ -158,6 +160,7 @@ int main(int ac, char **av)
 			}
 			i++;
 		}
+		printf("fd is %d\n", fd);
 		printf("Line is: |%s|\n", line);
 	}
 	else
