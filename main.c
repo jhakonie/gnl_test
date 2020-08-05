@@ -6,7 +6,7 @@
 /*   By: jhakonie <jhakonie@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/14 17:45:21 by jhakonie          #+#    #+#             */
-/*   Updated: 2020/07/31 12:40:17 by jhakonie         ###   ########.fr       */
+/*   Updated: 2020/08/05 23:28:20 by jhakonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,15 +42,14 @@ int main(int ac, char **av)
 			else if (x == 1)
 			{
 				printf("Line is: |%s|\n", line);
-				ft_strdel(&line);
 			}
-			else
+			else if (x == 0)
 			{
 				printf("Nothing left to read.\n");
+				printf("Line is: |%s|\n", line);
 			}
 			i++;
 		}
-		printf("Line is: |%s|\n", line);
 	}
 	else if (ac == 1)
 		printf("Too few arguments.\nTo test with echo, write:\necho 'some text' | ./test_gnl stdin\n");
@@ -64,15 +63,14 @@ int main(int ac, char **av)
 			else if (x == 1)
 			{
 				printf("Line is: |%s|\n", line);
-				ft_strdel(&line);
 			}
 			else if (x == 0)
 			{
 				printf("Nothing left to read.\n");
+				printf("Line is: |%s|\n", line);
 			}
 			i++;
 		}
-		printf("Line is: |%s|\n", line);
 	}
 	else if (ac == 4)
 	{
@@ -95,11 +93,11 @@ int main(int ac, char **av)
 			else if (x == 1)
 			{
 				printf("Line is: |%s|\n", line);
-				ft_strdel(&line);
 			}
-			else
+			else if (x == 0)
 			{
 				printf("Nothing left to read.\n");
+				printf("Line is: |%s|\n", line);
 			}
 			i++;
 		}
@@ -114,11 +112,11 @@ int main(int ac, char **av)
 			else if (x == 1)
 			{
 				printf("Line is: |%s|\n", line);
-				ft_strdel(&line);
 			}
-			else
+			else if (x == 0)
 			{
 				printf("Nothing left to read.\n");
+				printf("Line is: |%s|\n", line);
 			}
 			i++;
 		}
@@ -133,11 +131,11 @@ int main(int ac, char **av)
 			else if (x == 1)
 			{
 				printf("Line is: |%s|\n", line);
-				ft_strdel(&line);
 			}
-			else
+			else if (x == 0)
 			{
 				printf("Nothing left to read.\n");
+				printf("Line is: |%s|\n", line);
 			}
 			i++;
 		}
@@ -154,14 +152,15 @@ int main(int ac, char **av)
 				printf("Line is: |%s|\n", line);
 				ft_strdel(&line);
 			}
-			else
+			else if (x == 0)
 			{
 				printf("Nothing left to read.\n");
+				printf("Line is: |%s|\n", line);
 			}
 			i++;
 		}
 		printf("fd is %d\n", fd);
-		printf("Line is: |%s|\n", line);
+
 	}
 	else
 	{
