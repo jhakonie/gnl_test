@@ -6,7 +6,7 @@
 /*   By: jhakonie <jhakonie@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/14 17:45:21 by jhakonie          #+#    #+#             */
-/*   Updated: 2020/08/16 15:45:08 by jhakonie         ###   ########.fr       */
+/*   Updated: 2020/08/16 15:56:49 by jhakonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,7 +147,7 @@ int main(int ac, char **av)
 	else if (ac == 3 && ft_strcmp(av[1], "FD_SIZE") == 0)
 	{
 		fd = open(av[2], O_RDONLY);
-		printf("We will send fd = |%d| (given as second argument) to the file.\n", atoi(av[2]));
+		printf("We will send fd = |%d| (given as second argument) to GNL.\n", atoi(av[2]));
 		fd = atoi(av[2]);
 		while (x == 1 && i < 10)
 		{
