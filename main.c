@@ -6,7 +6,7 @@
 /*   By: jhakonie <jhakonie@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/14 17:45:21 by jhakonie          #+#    #+#             */
-/*   Updated: 2020/08/16 15:56:49 by jhakonie         ###   ########.fr       */
+/*   Updated: 2020/08/16 16:56:26 by jhakonie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,16 +37,18 @@ int main(int ac, char **av)
 		{
 			x = get_next_line(fd, &line);
 			if (x == -1)
-				printf("error\n");
+				printf("error, gnl returns |%d|", x);
 
 			else if (x == 1)
 			{
 				printf("Line is: |%s|\n", line);
+				ft_strdel(&line);
 			}
 			else if (x == 0)
 			{
 				printf("Gnl returns |%d| Nothing left to read.\n", x);
 				printf("Line is: |%s|\n", line);
+ft_strdel(&line);
 			}
 			i++;
 		}
@@ -59,15 +61,17 @@ int main(int ac, char **av)
 		{
 			x = get_next_line(fd, &line);
 			if (x == -1)
-				ft_putstr("error\n");
+				printf("error, gnl returns |%d|", x);
 			else if (x == 1)
 			{
 				printf("Line is: |%s|\n", line);
+				ft_strdel(&line);
 			}
 			else if (x == 0)
 			{
 				printf("Gnl returns |%d| Nothing left to read.\n", x);
 				printf("Line is: |%s|\n", line);
+ft_strdel(&line);
 			}
 			i++;
 		}
@@ -87,6 +91,7 @@ int main(int ac, char **av)
 				else if (x == 1)
 				{
 					printf("Line is: |%s|\n", line);
+					ft_strdel(&line);
 				}
 				else if (x == 0)
 				{
@@ -111,6 +116,7 @@ int main(int ac, char **av)
 				else if (x == 1)
 				{
 					printf("Line is: |%s|\n", line);
+					ft_strdel(&line);
 				}
 				else if (x == 0)
 				{
@@ -135,6 +141,7 @@ int main(int ac, char **av)
 			else if (x == 1)
 			{
 				printf("Line is: |%s|\n", line);
+				ft_strdel(&line);
 			}
 			else if (x == 0)
 			{
@@ -157,6 +164,7 @@ int main(int ac, char **av)
 			else if (x == 1)
 			{
 				printf("Line is: |%s|\n", line);
+				ft_strdel(&line);
 			}
 			else if (x == 0)
 			{
@@ -182,11 +190,12 @@ int main(int ac, char **av)
 		{
 			x = get_next_line(fd, &line);
 			if (x == -1)
-				ft_putstr("error");
+				printf("error, gnl returns |%d|", x);
 
 			else if (x == 1)
 			{
 				printf("Line is: |%s|\n", line);
+				ft_strdel(&line);
 			}
 			else if (x == 0)
 			{
@@ -201,11 +210,12 @@ int main(int ac, char **av)
 		{
 			x = get_next_line(fd2, &line);
 			if (x == -1)
-				ft_putstr("error\n");
+				printf("error, gnl returns |%d|", x);
 
 			else if (x == 1)
 			{
 				printf("Line is: |%s|\n", line);
+				ft_strdel(&line);
 			}
 			else if (x == 0)
 			{
@@ -220,11 +230,12 @@ int main(int ac, char **av)
 		{
 			x = get_next_line(fd3, &line);
 			if (x == -1)
-				ft_putstr("error");
+				printf("error, gnl returns |%d|", x);
 
 			else if (x == 1)
 			{
 				printf("Line is: |%s|\n", line);
+				ft_strdel(&line);
 			}
 			else if (x == 0)
 			{
@@ -239,7 +250,7 @@ int main(int ac, char **av)
 		{
 			x = get_next_line(fd, &line);
 			if (x == -1)
-				ft_putstr("error");
+				printf("error, gnl returns |%d|", x);
 
 			else if (x == 1)
 			{
